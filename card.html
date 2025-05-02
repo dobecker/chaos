@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Ereigniskarte – Neumorph</title>
+  <style>
+    body {
+      font-family: "VT323", monospace;
+      margin: 0;
+      padding: 0;
+ background: linear-gradient(145deg, rgb(243, 220, 248), #6895dd);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #e8ecf9;
+      border-radius: 5px;
+      box-shadow: 
+        8px 8px 16px #1e2230,
+       -8px -8px 16px rgb(241, 230, 250);
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .icon {
+      width: 80%;
+      height: 200px;
+      margin:auto;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      background: #e8ecf9;
+      box-shadow: 
+        inset 4px 4px 8px #cbd0e4,
+        inset -4px -4px 8px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .text {
+      font-size: 1.2rem;
+      color: #0F0F0F;
+    }
+
+    .points {
+      padding: 20px;
+      font-size: 2rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon" >
+      <img id="icon" alt="Ereignis Icon" />
+    </div>
+    <div class="text" id="description">a</div>
+    <div class="points" id="points">+10 PUNKTE</div>
+  </div>
+
+
+  <script>
+    const green = 'green';
+    const red = '#fb1452';
+    const action = '#f19b1b'
+
+    const cards = [
+
+      {
+        'text': 'Du hast Dank einer Glückswurst keine spuren in der Toilette hinterlassen und dir damit die goldene Klobürste verdient!',
+        'icon': 'media/goldene_klobuerste.png',
+        'points': '+10 Punkte',
+        'color': green,
+      },
+      {
+        'text': 'Du hast bist mit dreckigen Schuhen über den Teppich gelaufen! Gehe zurück um sauber zu machen.',
+        'points': '-5 Punkte',
+        'icon': 'media/shoes.png',
+        'color': red,
+      },
+      {
+        'text': 'Du bist in der Schreckenskammer durch ein Wurmloch gefallen!',
+        'points': 'Du wirst zum roten Ereignisfeld teleportiert',
+        'icon': 'media/teleport.png',
+        'color': action,
+      },
+      {
+        'text': 'Dein fettiger Handabdruck wurde auf einem Fenster sichergestellt',
+        'points': '-5 Punkte',
+        'icon': 'media/window.png',
+        'color': red,
+      },
+      {
+        'text': 'Du hast eine Socke deines Paars verloren, so kannst du nicht weiterziehen!',
+        'points': '-5 Punkte',
+        'icon': 'media/sock.png',
+        'color': red,
+      },
+      {
+        'text': 'Du hast ein neues Putzmittel erfunden das jeden Fleck aus dem Teppich entfernt!',
+        'points': '+10 Punkte',
+        'icon': 'media/doc.png',
+        'color': green,
+      },
+      {
+        'text': 'Die Ordnungspolizei hat dich dabei erwischt wie du deinen Teller in die Spüle gestellt hast',
+        'points': '-5 Punkte',
+        'icon': 'media/police.png',
+        'color': red,
+      },
+      {
+        'text': 'Du hast eine ganze Tasche voll mit Punkten im Bus liegen lassen!',
+        'points': '-5 Punkte',
+        'icon': 'media/bus.png',
+        'color': red,
+      },
+      {
+        'text': 'Du solltest einen leckeren Salat machen, keinen Kabel Salat.',
+        'points': '-5 Punkte',
+        'icon': 'media/salat.png',
+        'color': red,
+      },
+      {
+        'text': 'Ein gemachtes Bett sorgt sofort für mehr Gemütlichkeit und Entspannung.',
+        'points': '+10 Punkte',
+        'icon': 'media/bed.png',
+        'color': green,
+      },
+    ];
+
+    const randomIndex = Math.floor(Math.random() * cards.length);
+
+
+    document.getElementById("description").innerText = cards[randomIndex].text;
+    document.getElementById("points").innerText = cards[randomIndex].points;
+    document.getElementById("icon").src = cards[randomIndex].icon;
+    document.getElementById("points").style.color = cards[randomIndex].color;
+  </script>
+</body>
+</html>
