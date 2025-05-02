@@ -7,14 +7,14 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="refresh" content="3" >
+
   <title>Ereigniskarte – Neumorph</title>
   <style>
     body {
       font-family: "VT323", monospace;
       margin: 0;
       padding: 0;
- background: linear-gradient(145deg, rgb(244, 225, 248), #37414e);
+ background: linear-gradient(145deg, rgb(243, 220, 248), #6895dd);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -64,18 +64,54 @@
     .points {
       padding: 20px;
       font-size: 2rem;
-      color: green;
     }
 
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="icon">
-      <img src="media/goldene_klobuerste.png" alt="Ereignis Icon" />
+    <div class="icon" >
+      <img id="icon" alt="Ereignis Icon" />
     </div>
-    <div class="text">Du hast Dank einer Glückswurst keine spuren in der Toilette hinterlassen und dir damit die goldene Klobürste verdient!</div>
-    <div class="points">+10 PUNKTE</div>
+    <div class="text" id="description">a</div>
+    <div class="points" id="points">+10 PUNKTE</div>
   </div>
+
+
+  <script>
+    const green = 'green';
+    const red = '#fb1452';
+    const blue = '#1bd8f1'
+
+    const cards = [
+
+      {
+        'text': 'Du hast Dank einer Glückswurst keine spuren in der Toilette hinterlassen und dir damit die goldene Klobürste verdient!',
+        'icon': 'media/goldene_klobuerste.png',
+        'points': '+10 Punkte',
+        'color': green,
+      },
+      {
+        'text': 'Du hast bist mit dreckigen Schuhen über den Teppich gelaufen! Gehe zurück um sauber zu machen.',
+        'points': '-5 Punkte',
+        'icon': 'media/shoes.png',
+        'color': red,
+      },
+      {
+        'text': 'Du bist in der Schreckenskammer durch ein Wurmloch gefallen!',
+        'points': 'Du wirst zum roten Ereignisfeld teleportiert',
+        'icon': 'media/teleport.png',
+        'color': blue,
+      }
+    ];
+
+    const randomIndex = Math.floor(Math.random() * cards.length);
+
+
+    document.getElementById("description").innerText = cards[randomIndex].text;
+    document.getElementById("points").innerText = cards[randomIndex].points;
+    document.getElementById("icon").src = cards[randomIndex].icon;
+    document.getElementById("points").style.color = cards[randomIndex].color;
+  </script>
 </body>
 </html>
