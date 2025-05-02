@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ereigniskarte – Neumorph</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+ background: linear-gradient(145deg, #fbeaff, #e4f0ff);
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #e8ecf9;
+      border-radius: 20px;
+      box-shadow: 
+        8px 8px 16px #cbd0e4,
+       -8px -8px 16px #ffffff;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin:auto;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      background: #e8ecf9;
+      box-shadow: 
+        inset 4px 4px 8px #cbd0e4,
+        inset -4px -4px 8px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .text {
+      font-size: 1.2rem;
+      color: #5c5f73;
+    }
+
+    @media (min-width: 600px) {
+      .icon {
+        width: 100px;
+        height: 100px;
+      }
+
+      .icon img {
+        width: 64px;
+        height: 64px;
+      }
+
+      .text {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">
+      <img src="goldene_klobuerste.png" alt="Ereignis Icon" />
+    </div>
+    <div class="text">Wichtiger Termin: Präsentation um 14:00 Uhr</div>
+  </div>
+</body>
+</html>
